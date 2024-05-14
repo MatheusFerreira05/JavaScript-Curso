@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Velocidade</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Digite sua velocidade: <input type="number" name="velocidade" id="velocidade">km/h
+    <input type="button" value="Enviar" onclick="VerificarVelocidade()">
+
+    <div id='resposta'>
+
+    </div>
+    <script>
+        function VerificarVelocidade(){
+            var velocidade = document.getElementById('velocidade')
+            var resposta = document.getElementById('resposta')
+            var vel = Number(velocidade.value)
+            resposta.innerHTML = `Sua velocidade é de <strong>${vel}km/h</strong>`
+
+            if(vel > 60){
+                resposta.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade</p>`
+            }
+            resposta.innerHTML += '<p>Dirija sempre com cinto de segurança!</p>'
+        }
+    </script>
+</body>
+</html>
